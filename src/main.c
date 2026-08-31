@@ -18,15 +18,24 @@ int main(void) {
     Stand *s1 = crearStand(101, 4.0f, 3.0f, DISPONIBLE);
     Stand *s2 = crearStand(102, 2.0f, 2.5f, RESERVADO);
     Stand *s3 = crearStand(103, 3.0f, 5.0f, DISPONIBLE);
+    Stand *s4 = crearStand(104, 5.0f, 3.0f, DISPONIBLE);
+    Stand *s5 = crearStand(105, 4.0f, 2.5f, RESERVADO);
+    Stand *s6 = crearStand(106, 6.0f, 5.0f, DISPONIBLE);
 
     verificarCreacion(s1, "s1");
     verificarCreacion(s2, "s2");
     verificarCreacion(s3, "s3");
+    verificarCreacion(s4, "s4");
+    verificarCreacion(s5, "s5");
+    verificarCreacion(s6, "s6");
 
     printf("\n[Prueba] Insertar stands ordenados por área:\n");
     insertarOrdenadoPorArea(&lista, s1);
     insertarOrdenadoPorArea(&lista, s2);
     insertarOrdenadoPorArea(&lista, s3);
+    insertarOrdenadoPorArea(&lista, s4);
+    insertarOrdenadoPorArea(&lista, s5);
+    insertarOrdenadoPorArea(&lista, s6);
     imprimirLista(lista);
 
     printf("\n[Prueba] Buscar stand #102:\n");
