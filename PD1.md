@@ -100,8 +100,7 @@ Graba un video (3-8 minutos) donde demuestres:
 | Audio claro y diapositivas legibles | ☐ |
 
 ```
-Enlace del video: https://...
-```
+Enlace del video: (https://alumnosuady-my.sharepoint.com/:v:/g/personal/a25216445_alumnos_uady_mx/IQC_-rl01LSkRJ1IFe5_o9j5AfdieFMWq0lhnb8qJLLZ2to?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=QGXlN1)
 
 ## Retroalimentación automática con GitHub Actions
 
