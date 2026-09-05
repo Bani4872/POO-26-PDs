@@ -4,7 +4,7 @@
 #include <string.h>
 
 float calcularArea(const Stand *Stand){
-    float Area = Stand->largo * Stand->ancho;
+    float Area = Stand->largo * Stand->ancho; //Operacion para hallar el area
     return Area;
 }
 
@@ -22,7 +22,7 @@ void liberarLista(Stand **Head){
 
 const char *estadoAString(StandEstado Estado) {
     switch (Estado) {
-        case DISPONIBLE: return "Disponible";
+        case DISPONIBLE: return "Disponible";//Segun el numero, retorna el string de estado
         case RESERVADO:  return "Reservado";
         case VENDIDO:    return "Vendido";
         default:         return "Desconocido";
@@ -33,8 +33,8 @@ void imprimirLista(const Stand *Head){
     const Stand *Actual = Head;
     while(Actual != NULL){
         printf("Numero: %d\n", Actual->numero);
-        printf("Largo: %2.f\n", Actual->largo);
-        printf("Ancho: %2.f\n", Actual->ancho);
+        printf("Largo: %.2f\n", Actual->largo);
+        printf("Ancho: %.2f\n", Actual->ancho);
         printf("Estado: %s\n", estadoAString(Actual->estado));
         printf("--------------------\n");
         Actual = Actual->siguiente;
@@ -52,6 +52,7 @@ if(Actual == NULL){
     printf("No se encontro ningun stand con el Numero");
     return NULL;
 }
+
 return Actual;
 }
 
