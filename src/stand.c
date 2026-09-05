@@ -20,8 +20,8 @@ void liberarLista(Stand **Head){
     *Head = NULL;
 }
 
-const char *estadoAString(StandEstado estado) {
-    switch (estado) {
+const char *estadoAString(StandEstado Estado) {
+    switch (Estado) {
         case DISPONIBLE: return "Disponible";
         case RESERVADO:  return "Reservado";
         case VENDIDO:    return "Vendido";
@@ -32,54 +32,54 @@ const char *estadoAString(StandEstado estado) {
 void imprimirLista(const Stand *Head){
     const Stand *Actual = Head;
     while(Actual != NULL){
-        printf("ID: %d\n", Actual->numero);
-        printf("largo: %2.f\n", Actual->largo);
-        printf("ancho: %2.f\n", Actual->ancho);
-        printf("estado: %s\n", estadoAString(Actual->estado));
+        printf("Numero: %d\n", Actual->numero);
+        printf("Largo: %2.f\n", Actual->largo);
+        printf("Ancho: %2.f\n", Actual->ancho);
+        printf("Estado: %s\n", estadoAString(Actual->estado));
         printf("--------------------\n");
         Actual = Actual->siguiente;
     }
 }
 
-Stand *buscarStand(Stand *Head, int numero){
+Stand *buscarStand(Stand *Head, int Numero){
 Stand *Actual = Head;
 
-while(Actual != NULL && Actual->numero != numero){
+while(Actual != NULL && Actual->numero != Numero){
     Actual = Actual->siguiente;
 }
 
 if(Actual == NULL){
-    printf("No se encontro ningun stand con el numero");
+    printf("No se encontro ningun stand con el Numero");
     return NULL;
 }
 return Actual;
 }
 
-int borrarStand(Stand **Head, int numero) {
+int borrarStand(Stand **Head, int Numero) {
     if (Head == NULL || *Head == NULL) return 0;
 
-    Stand *actual = *Head;
-    Stand *anterior = NULL;
+    Stand *Actual = *Head;
+    Stand *Anterior = NULL;
 
-    while (actual != NULL && actual->numero != numero) {
-        anterior = actual;
-        actual = actual->siguiente;
+    while (Actual != NULL && Actual->numero != Numero) {
+        Anterior = Actual;
+        Actual = Actual->siguiente;
     }
 
-    if (actual == NULL) return 0; // No se encontró
+    if (Actual == NULL) return 0; // No se encontró
 
-    if (anterior == NULL) {
-        *Head = actual->siguiente;
+    if (Anterior == NULL) {
+        *Head = Actual->siguiente;
     } else {
-        anterior->siguiente = actual->siguiente;
+        Anterior->siguiente = Actual->siguiente;
     }
 
-    free(actual);
+    free(Actual);
     return 1;
 }
 
-int actualizarStand(Stand **Head, int numero, float AltoNuevo, float AnchoNuevo, StandEstado EstadoNuevo){
-    Stand *Actual = buscarStand(*Head, numero);
+int actualizarStand(Stand **Head, int Numero, float AltoNuevo, float AnchoNuevo, StandEstado EstadoNuevo){
+    Stand *Actual = buscarStand(*Head, Numero);
 
     if(Actual == NULL) return 0;
 
@@ -92,7 +92,7 @@ int actualizarStand(Stand **Head, int numero, float AltoNuevo, float AnchoNuevo,
     return 1;
 }
 
-Stand *crearStand(int numero, float ancho, float largo, StandEstado estado){
+Stand *crearStand(int Numero, float Ancho, float Largo, StandEstado Estado){
     Stand *NuevoStand = (Stand*)malloc(sizeof(Stand));
     if(NuevoStand == NULL){
         printf("Error al asignar memoria para el nuevo stand.\n");
@@ -100,11 +100,11 @@ Stand *crearStand(int numero, float ancho, float largo, StandEstado estado){
     }
 
     //Recolectamos los datos para el nuevo stand (Donde los parametros de la funcion definida) y los asignamos a la estructura
-    NuevoStand->numero = numero;
-    NuevoStand->estado = estado;
-    NuevoStand->estado = estado;
-    NuevoStand->largo = largo;
-    NuevoStand->ancho = ancho;
+    NuevoStand->numero = Numero;
+    NuevoStand->estado = Estado;
+    NuevoStand->estado = Estado;
+    NuevoStand->largo = Largo;
+    NuevoStand->ancho = Ancho;
     NuevoStand->siguiente = NULL;
     return (NuevoStand);
 }
