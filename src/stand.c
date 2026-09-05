@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define LONGITUD_STRING 50
-
 float calcularArea(const Stand *Stand){
     float Area = Stand->largo * Stand->ancho;
     return Area;
